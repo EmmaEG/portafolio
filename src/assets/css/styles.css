@@ -1,0 +1,163 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';/*importamos los temas preconstrudios*/
+
+
+/*importamos las fuentes externas con la regla @font-face cargamos la fuente y especificamos la ruta*/
+@font-face{
+	font-family: "yanone"; 
+	src: url("fonts/yanone.ttf");
+}
+
+@font-face{
+	font-family: "finger"; 
+	src: url("fonts/finger.ttf");
+}
+
+@font-face{
+	font-family: "titilium"; 
+	src: url("fonts/titilium.ttf");
+}
+
+
+*{
+  margin: 0rem;
+  padding: 0rem;
+}
+
+#masthead{
+  width: 100%;
+  margin-top: -1px;
+}
+
+#masthead img{
+  width: 100%;
+}
+
+
+.example-container{
+  margin: 0rem auto;
+}
+
+.mat-toolbar.mat-primary{
+	background: #cdd6d3;
+  height: 5em;
+  flex: 1 0 auto;
+}
+
+.mat-toolbar.mat-primary h1{
+  margin-left: 0.9375em;
+}
+
+mat-sidenav{
+	width: 30%;
+}
+
+.mat-sidenav-fixed {
+    /* position: fixed; */
+    position: absolute !important;
+}
+
+.icon{
+	margin-right: 0.9375em;
+}
+
+.example-is-mobile .example-toolbar {
+  position: relative;
+}
+
+/****************/
+@media screen and (max-width: 600px){
+  
+  .example-is-mobile .example-sidenav-container {
+    margin-top: 0px !important;
+  }
+
+  .logo-image{
+    font-size: 1rem !important;
+    display: none !important;
+  }
+
+  .logo-image-EG{
+    visibility: visible !important;
+    margin-left: 1rem !important;
+    font-size: 2.5rem !important;
+  }
+
+  mat-sidenav{
+    width: 50% !important;
+  }
+
+}
+/****************/
+
+.logo-image{
+  transition: color 500ms, transform 500ms;
+}
+
+.logo-image:hover{
+  background: transparent;
+  color: black;
+  transform: scale(1.1);
+}
+
+.logo-image{
+  font-family: "finger";
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: black;  
+  margin-left: 1.5rem;
+}
+
+.logo-image-EG{
+  font-family: "finger";
+  text-decoration: none;
+  color: black;  
+  margin-left: 1.5rem;
+}
+
+.logo-image-EG{
+  visibility: hidden;
+}
+
+
+
+.button{
+  background: none;
+  border: none;
+  padding-top: 0.125rem;
+  color: white;
+  text-indent: none;
+  text-shadow: none;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0em;
+  outline:none;
+  font-size: 1rem;
+}
+
+
+#container-create{
+  text-align: center;
+}
+
+#footer{
+  width: 100%;
+  height: 9.375rem;
+  background: #0a3255;
+  
+}
+
+.footer-bottom{
+  text-align: center;
+  color: #45b29a;
+  padding-top: 4.375rem;
+}
+
+
+
+
+
+
+
+
+

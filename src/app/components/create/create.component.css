@@ -1,0 +1,64 @@
+#container{
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 70px;
+  min-width: 150px;
+  max-width: 600px;
+}
+
+.form{
+	margin-top: 30px;
+}
+
+.form-label{
+  width: 100%;
+}
+
+.button{
+	background: black;
+}
+
+a{
+	font-family: "finger", sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	color: #006b00;
+}
+
+mat-card{
+	background: black;
+	width: 75%;
+	margin: 0px auto;
+}
+
+.card-filed{
+	color: white;
+	font-size: 16px;
+}
+
+.card-success{
+	color: white;
+	font-size: 16px;
+}
+
+h1{
+	font-family: "finger";
+	font-size: 50px;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.project{
+	display: none;
+}
+
+
+
+
+
+
+
+

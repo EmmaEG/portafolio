@@ -1,0 +1,24 @@
+<h1>Proyectos</h1>
+
+
+<li *ngFor="let project of projects" class="list-project">
+  <div id="container">
+    <mat-card class="project">
+        <a [routerLink]="['/proyecto', project._id]">
+        <mat-card-header class="header">
+        <mat-card-title>{{project.name}}</mat-card-title>
+        <mat-card-subtitle>{{project.category}}</mat-card-subtitle>
+        </mat-card-header>    
+      <mat-card-content class="image">
+      <img mat-card-image src="{{url+'get-image/'+project.image}}">
+      </mat-card-content>
+      <div class="article">
+      <p>
+          Año del proyecto: {{project.year}}<br>
+          Descripción: {{project.description}}
+      </p>
+      </div>
+      </a>
+    </mat-card>    
+  </div>
+</li>

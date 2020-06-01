@@ -1,0 +1,68 @@
+<div id="container" *ngIf="project">
+  <h1>{{title}}</h1> 
+
+  <mat-card class="success-container" *ngIf="status == 'success'">
+    <mat-card-content class="card-success">
+      El proyecto cargó correctamente, podes verlo <a [routerLink]="['/proyecto', save_project._id]">ACÁ</a>
+    </mat-card-content>
+  </mat-card >
+
+  <mat-card class="failed-container" *ngIf="status == 'failed'">
+    <mat-card-content class="card-filed">
+      El proyecto no se ha podido cargar
+    </mat-card-content>
+  </mat-card >
+
+  
+  <form class="form" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <p>
+    <mat-form-field class="form-label">
+      <mat-label for="name">Nombre del proyecto</mat-label>
+      <input matInput placeholder="Ej. Portafolio" type="text" name="name" maxlength="25" #name="ngModel" [(ngModel)]="project.name" required/>
+    </mat-form-field >
+    </p> 
+
+    
+    <p>
+    <mat-form-field class="form-label">
+      <mat-label for="category">Categoría</mat-label>
+      <input matInput placeholder="Ej. web portafolio" type="text" name="category" maxlength="25" #category="ngModel" [(ngModel)]="project.category" required/>
+    </mat-form-field>
+    </p>
+
+    <p>
+    <mat-form-field class="form-label">
+      <mat-label for="description">Descripción</mat-label>
+      <textarea matInput placeholder="Ej. Proyectos propios en desarrollo...." type="text" name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+    </mat-form-field>
+    </p>
+    
+    <p>
+    <mat-form-field class="form-label">
+     <mat-label for="year">Año de creación</mat-label>
+      <input matInput type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required/>
+    </mat-form-field>
+    </p>
+
+     <p>
+      <mat-form-field class="form-image" *ngIf="show == true">  
+        <ngx-mat-file-input name="file" placeholder="Subir imagen" #image="ngModel" [(ngModel)]="project.image"  (change)="fileChangeEvent($event)" required>
+        </ngx-mat-file-input>    
+        <mat-icon matSuffix>folder</mat-icon> 
+      </mat-form-field> 
+      <span class="container-image" *ngIf="project.image">
+       <mat-card class="project">
+          <mat-card-content class="image">
+           <img mat-card-image src="{{url+'get-image/'+project.image}}">
+          </mat-card-content>
+        </mat-card>
+      </span>
+    </p>
+     <mat-card-actions>
+            <button class="button" mat-raised-button type="submit" color="primary" value="Enviar" [disabled]="!projectForm.form.valid">Enviar</button>
+     </mat-card-actions>
+    
+  </form>
+
+  
+</div>  

@@ -1,0 +1,33 @@
+<h1>Detalle</h1>
+
+<div class="container" *ngIf="project">
+	<mat-card class="project" *ngIf="project.image">
+      <mat-card-content class="image" *ngIf="project.image">
+     	 <img mat-card-image src="{{url+'get-image/'+project.image}}">
+      </mat-card-content>
+      <div id="article">
+        <mat-card-title>{{project.name}}</mat-card-title>
+        <mat-card-subtitle>{{project.category}}<br>Año de creación {{project.year}}</mat-card-subtitle>        
+	      Descripción: {{project.description}}	      
+      </div>
+    </mat-card>
+
+   
+    <div id="button-links">   
+    <p *ngIf="confirm == false">
+
+      <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit" mat-raised-button>Editar</a>
+      <a (click)="setConfirm(true)" class="button-delete" mat-raised-button>Borrar</a>
+    </p>
+
+    <p *ngIf="confirm == true"> 
+      <span class="confirm">¿Estás seguro que querés borrar este proyecto?</span><br>
+      <a (click)="setConfirm(false)" class="button-edit" mat-raised-button>Cancelar</a>
+      <a (click)="deleteProject(project._id)" class="button-delete" mat-raised-button>Borrar definitivamente</a>
+    </p>
+
+    <p>
+      <a [routerLink]="['/proyectos']" class="button-back" mat-raised-button>Proyectos</a>
+    </p>
+    </div>
+</div>
